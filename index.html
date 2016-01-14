@@ -1,63 +1,150 @@
 <!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Haibuzou.GitHub.io by haibuzou</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
-  <link rel="stylesheet" href="stylesheets/github-dark.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/haibuzou">View On GitHub</a></li>
+        </nav>
+      </div><!-- end header -->
 
-  <title>Haibuzou.GitHub.io</title>
-  <meta name="description" content="还不走A 博客">
+    <div class="wrapper">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-</head>
-
-<body>
-
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Haibuzou.GitHub.io</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">还不走A 博客</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/haibuzou" class="code">View Haibuzou.GitHub.io on GitHub</a>
+      <section>
+        <div id="title">
+          <h1>Haibuzou.GitHub.io</h1>
+          <p>还不走A 博客</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/haibuzou">haibuzou</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h1>
+
+        <h1>
 <a id="haibuzougithubio" class="anchor" href="#haibuzougithubio" aria-hidden="true"><span class="octicon octicon-link"></span></a>haibuzou.github.io</h1>
 
 <p>还不走A 博客</p>
-        </article>
-      </div>
+
+<h3>
+<a id="rxjava学习之路" class="anchor" href="#rxjava%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rxjava学习之路</h3>
+
+<p>Rxjava从去年开始就已经宣传的满天飞了，但是Rxjava并不是很好理解，网上的例子并不是很多，而且很多都是国外的资源，导致学习的过程比较崎岖。不过Rxjava一旦开始可以明白他的理念，你会发现它实在是太好用了。从这里开始是我自己的一点学习心得，顺带做点笔记了。希望能给大家点帮助。</p>
+
+<h3>
+<a id="如何开始学习" class="anchor" href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>如何开始学习</strong>
+</h3>
+
+<p>我最开始接触到Rxjava是从Android Weekly的周刊上，当时只有官方的资料，以及国外网站的一些资源，当时看的云里雾里。所以我这里不推荐直接去找官方的资料，而是做点相关的知识学习。
+说道Rxjava其实他的设计理念与java设计模式中的观察者模式很相似，如果对于观察者模式不了解，推荐看看翔哥的博客 <a href="http://blog.csdn.net/lmj623565791/article/details/24179699">传送门</a>
+关于观察者和订阅者翔哥的博客有了很形象的解释，现在我们对于观察这模式已经有了清晰的理解，下面来看看简单哥的关于Rxjava的前文介绍<a href="http://blog.csdn.net/bboyfeiyu/article/details/45557453">传送门</a>
+有了以上的2个基础，会对后面的学习过程有很大的帮助作用。</p>
+
+<h3>
+<a id="什么是rxjava" class="anchor" href="#%E4%BB%80%E4%B9%88%E6%98%AFrxjava" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>什么是Rxjava</strong>
+</h3>
+
+<p>Rxjava 即 Reactive Java 一种 java的 Functional Reactive Programming的实现，通俗的说就是：响应式函数编程。类似回调（callback）的感觉，当A类中发生变化会通过callback 通知B类中的callback实现接口，我们函数不再是死的，而是编程能够相应的函数。与回调的单对单不同，它可以单对多。当然他的功能不止是能够响应那么简单。</p>
+
+<h3>
+<a id="hello-world" class="anchor" href="#hello-world" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Hello World</strong>
+</h3>
+
+<p>万事从hello world开始，Rxjava主要的成员2人：Observables(被观察者，事件源)，Subscribers（订阅者），了解了上面提到观察这模式的，对于这两个很好理解。
+从Observables事件源开始，Observable相当于被观察者，他会发出事件给订阅者Subscribers。
+相关的uml图：</p>
+
+<p><img src="http://img.blog.csdn.net/20160105161948373" alt="这里写图片描述"></p>
+
+<p>现在我们来创建一个Observable </p>
+
+<div class="highlight highlight-source-java"><pre> <span class="pl-k">Observable&lt;<span class="pl-smi">String</span>&gt;</span> hello <span class="pl-k">=</span> <span class="pl-smi">Observable</span><span class="pl-k">.</span>create(<span class="pl-k">new</span> <span class="pl-smi">Observable</span>.<span class="pl-k">OnSubscribe&lt;<span class="pl-smi">String</span>&gt;</span>() {
+            <span class="pl-k">@Override</span>
+            <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">call</span>(<span class="pl-k">Subscriber&lt;? super <span class="pl-smi">String</span>&gt;</span> <span class="pl-v">sub</span>) {
+                sub<span class="pl-k">.</span>onNext(<span class="pl-s"><span class="pl-pds">"</span>hello word<span class="pl-pds">"</span></span>);
+                sub<span class="pl-k">.</span>onNext(<span class="pl-s"><span class="pl-pds">"</span>hello word<span class="pl-pds">"</span></span>);
+                sub<span class="pl-k">.</span>onCompleted();
+            }
+        });</pre></div>
+
+<p>hello 定义了返回类型String，使用create()方法创建了一个事件也就是Observable(create()方法其实是创建了一个Observable)，create()方法的成员变量OnSubscribe定义了事件应该如何发出，这里需要特别注意一点，onNext()方法是可以执行多次的，但是最后必须要在最后调用onCompleted()方法，因为Rxjava定义了onCompleted() 为不会再有onNext()的标志。最后当hello这个Observable被订阅的时候 call()方法就会被执行，那么如何被订阅呢？ 别急，我们还有另外一个主角Subscriber。</p>
+
+<p>创建一个Subscriber</p>
+
+<div class="highlight highlight-source-java"><pre>        <span class="pl-k">Subscriber&lt;<span class="pl-smi">String</span>&gt;</span> sub <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-k">Subscriber&lt;<span class="pl-smi">String</span>&gt;</span>() {
+            <span class="pl-k">@Override</span>
+            <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onCompleted</span>() {
+
+            }
+
+            <span class="pl-k">@Override</span>
+            <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onError</span>(<span class="pl-smi">Throwable</span> <span class="pl-v">e</span>) {
+
+            }
+
+            <span class="pl-k">@Override</span>
+            <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onNext</span>(<span class="pl-smi">String</span> <span class="pl-v">s</span>) {
+                <span class="pl-smi">Toast</span><span class="pl-k">.</span>makeText(<span class="pl-smi">MainActivity</span><span class="pl-k">.</span><span class="pl-v">this</span>,s,<span class="pl-smi">Toast</span><span class="pl-c1"><span class="pl-k">.</span>LENGTH_LONG</span>)<span class="pl-k">.</span>show();
+            }
+        };</pre></div>
+
+<p>相比较起来Subscriber理解起来就简单很多，除开前面已经亮相的onNext()和onCompleted()，还有一个onError()方法，从字面上很好理解就是回调出错的时候会进入的方法。我在onNext()接收到 hello 这个Observable的消息的时候就会去Toast一个消息出来。回到上面的问题，如何完成订阅呢？</p>
+
+<div class="highlight highlight-source-java"><pre>  hello<span class="pl-k">.</span>subscribe(sub);</pre></div>
+
+<p>我们的第一个hello world 就这样完成了。看起来与观察者模式很像，他的功能也不止上面写的那么简单，Rxjava内部提供了丰富的api，让我们来进行各样的操作。 拿上面的helloworld来举例，做点简单的修改。</p>
+
+<div class="highlight highlight-source-java"><pre>   <span class="pl-k">Observable&lt;<span class="pl-smi">String</span>&gt;</span> hello <span class="pl-k">=</span> <span class="pl-smi">Observable</span><span class="pl-k">.</span>just(<span class="pl-s"><span class="pl-pds">"</span>hello world<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>hehe<span class="pl-pds">"</span></span>);</pre></div>
+
+<p>just(T) 这个方法就可以将"hello world"和"hehe" 这2个信息依次发送出去，到订阅的Subscriber中。传单个变量当然不能满足需求，发送数组和集合就要用到另外一个方法</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">String</span>[] words <span class="pl-k">=</span>{ <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>};
+<span class="pl-k">List&lt;<span class="pl-smi">String</span>&gt;</span> hello<span class="pl-k">=</span> <span class="pl-smi">Arrays</span><span class="pl-k">.</span>asList(words);
+<span class="pl-k">Observable&lt;<span class="pl-smi">String</span>&gt;</span> hello <span class="pl-k">=</span> <span class="pl-smi">Observable</span><span class="pl-k">.</span>from(hehe);
+<span class="pl-c">//Observable&lt;String&gt; hello = Observable.from(hello);</span></pre></div>
+
+<p>from(T[]) 就是专门用来发送集合的方法。类似还有很多方法，在以后还会继续介绍</p>
+
+<h3>
+<a id="自定义action" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89action" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>自定义Action</strong>
+</h3>
+
+<p>订阅方法subscribe() 除了 subscribe(Subscriber) 以外，还可以自定义自己的Action。</p>
+
+<div class="highlight highlight-source-java"><pre> <span class="pl-k">Action1&lt;<span class="pl-smi">String</span>&gt;</span> nextAction <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Action1</span>() {
+            <span class="pl-k">@Override</span>
+            <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">call</span>(<span class="pl-smi">Object</span> <span class="pl-v">o</span>) {
+                <span class="pl-smi">Toast</span><span class="pl-k">.</span>makeText(<span class="pl-smi">MainActivity</span><span class="pl-k">.</span><span class="pl-v">this</span>,o<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>,<span class="pl-smi">Toast</span><span class="pl-c1"><span class="pl-k">.</span>LENGTH_LONG</span>)<span class="pl-k">.</span>show();
+            }
+        };
+
+hello<span class="pl-k">.</span>subscribe(nextAction);</pre></div>
+
+<p>不用复写Subscriber中的所有方法，只需自定义一个Action就可以接收消息。感觉越来越好用了。这里可能有人好奇Action1的1代表什么意思，其实就是代表参数个数，比如 Action2 ， Action3。至于有多少个Action有兴趣可以去看看源码。</p>
+
+<h3>
+<a id="总结" class="anchor" href="#%E6%80%BB%E7%BB%93" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>总结</strong>
+</h3>
+
+<p>现在我们初步了解了Rxjava，但是他还有很多很强大的功能，以及Rxjava好在哪里，都还要好好研究一下。</p>
+      </section>
+
     </div>
-    <footer>
-      <div class="owner">
-
-      <p><a href="https://github.com/haibuzou" class="avatar"><img src="https://avatars1.githubusercontent.com/u/7552935?v=3&amp;s=60" width="48" height="48"></a>View <a href="https://github.com/haibuzou">haibuzou</a> on <a href="https://www.github.com">GitHub</a></p>
-
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/haibuzou/haibuzou.github.io/tarball/master" class="tar">tar</a><a href="https://github.com/haibuzou/haibuzou.github.io/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
-
-  
-</body>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
 </html>
